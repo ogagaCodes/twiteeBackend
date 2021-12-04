@@ -7,9 +7,9 @@ const routes = require("../src/app");
 const createError = require("../src/_helpers/createError");
 const { RESPONSE } = require("../src/_constants/response");
 const { HTTP } = require("../src/_constants/http");
-
 const app = express();
-
+const { Router } = require("express");
+const router = Router();
 app.disable("x-powered-by");
 
 // global middlewares
@@ -75,19 +75,7 @@ apiRouter.use((error, _req, res, _next) => {
   });
 });
 
-// place holder for base route
-app.use("/", async (req, res, next) => {
-  res.status(HTTP.OK).json({
-    code: HTTP.OK,
-    message: RESPONSE.SUCCESS,
-    data: {
-      info: "Twitee Backend",
-    },
-  });
-});
 
-const apiURL = "/";
-
-app.use(apiURL, apiRouter);
+app.use(apiRouter);
 
 module.exports = app;
