@@ -1,3 +1,6 @@
+const dotenv = require("dotenv");
+dotenv.config();
+
 module.exports = {
   dbHost: process.env.HOST,
   dbPassword: process.env.PASSWORD,

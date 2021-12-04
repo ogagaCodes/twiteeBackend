@@ -1,3 +1,4 @@
+const { hashPassword } = require('../../../../_helpers/hashpassword')
 module.exports = (sequelize, Sequelize) => {
   let User = sequelize.define("user", {
     name: {
@@ -10,7 +11,7 @@ module.exports = (sequelize, Sequelize) => {
     password: {
       type: Sequelize.STRING,
       set(value) {
-        this.setDataValue("password", hash(value));
+        this.setDataValue("password", hashPassword(value));
       },
     },
   });
