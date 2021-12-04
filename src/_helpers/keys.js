@@ -4,5 +4,7 @@ module.exports = {
   dbUser: process.env.USER,
   dbPort: process.env.DBPORT,
   db: process.env.DATABASE,
-  PORT: process.env.PORT
+  PORT: process.env.PORT,
+  JWTSecret: process.env.JWTSECRET,
+  JWTSecret: process.env.JWT_EXPIRES_IN,
 };
