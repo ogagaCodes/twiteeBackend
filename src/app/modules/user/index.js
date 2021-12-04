@@ -5,13 +5,6 @@ const validateRequest = require("../../../middlewares/validateRequest");
 const { checkAuth } = require("../../../middlewares/checkAuth");
 
 const router = Router();
-router.get(
-    "/test",
-  //   validateRequest(userSchema.registerUserSchema, "body"),
-    async (req, res, next) => {
-        return res.send("Hello Tweeetiiiiii......lol")
-    }
-  );
 router.post(
   "/signup",
 //   validateRequest(userSchema.registerUserSchema, "body"),
