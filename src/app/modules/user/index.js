@@ -1,14 +1,14 @@
 const { Router } = require("express");
 const validateRequest = require("../../../middlewares/validateRequest");
-// const userSchema = require("./user.schema");
-// const userController = require("./user.controller");
+const userSchema = require("./validator");
+const userController = require("./controllers/user.controllers");
 const { checkAuth } = require("../../../middlewares/checkAuth");
 
 const router = Router();
 router.post(
   "/signup",
-//   validateRequest(userSchema.registerUserSchema, "body"),
-//   userController.signup
+  validateRequest(userSchema.registerUserSchema, "body"),
+  userController.signupUser
 );
 
 router.post(
